@@ -82,11 +82,11 @@ group_members.addEventListener('click', function() {
 });
 
 user_input.addEventListener('keypress', function(e) {
-    if(e.key == 'Enter' && user_input.value.toLowerCase() === correct_answer) {
+    if(e.key == 'Enter' && user_input.value.trim().toLowerCase() === correct_answer) {
         group_members.setAttribute('src', pickPhoto());
         user_input.value = '';
         serie += 1;
-    } else if(e.key == 'Enter' && user_input.value.toLowerCase() !== correct_answer) {
+    } else if(e.key == 'Enter' && user_input.value.trim().toLowerCase() !== correct_answer) {
         group_members.className += "shk";
         user_input.value = '';
         nb_of_fails += 1;
