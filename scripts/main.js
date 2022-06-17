@@ -37,7 +37,7 @@ function serieFinished() {
     return serie === 3;
 }
 
-function resetArray() {
+function resetDisplay() {
     img_array = [
         ["0.png","1.png","2.png","3.png","4.png","5.png","6.png","7.png","8.png","9.png"],
         ["0.png","1.png","2.png","3.png","4.png","5.png","6.png","7.png","8.png","9.png"],
@@ -51,14 +51,33 @@ function resetArray() {
 
     serie = -1;
     group_members.setAttribute('src','media/blvk.png');
+    user_input.style.display = 'none';
+
+    if(nb_of_fails === 0) {
+        document.querySelector('h4').textContent = "You got them all, congratz :p";
+    } else if(nb_of_fails === 1) {
+        document.querySelector('h4').textContent = "You only made 1 mistake, that's pretty good !";
+    } else if(nb_of_fails <= 5) {
+        document.querySelector('h4').textContent = "You only made " + nb_of_fails + " mistakes, that's pretty good !";
+    } else {
+        document.querySelector('h4').textContent = "You made more than 5 mistakes, but it's okay, keep trying !";
+    }
+
+    document.querySelector('h4').style.display = 'block';
+
     nb_of_fails = 0;
 }
+
+//LISTENERS INIT
 
 group_members.addEventListener('click', function() {
     let mysrc = group_members.getAttribute('src');
     if(mysrc === 'media/blvk.png' && serie === -1) {
         group_members.setAttribute('src', pickPhoto());
         serie = 0;
+        document.querySelector('h5').style.display = 'none';
+        document.querySelector('h4').style.display = 'none';
+        user_input.style.display = 'block';
     }
 })
 
@@ -73,6 +92,5 @@ user_input.addEventListener('keypress', function(e) {
         nb_of_fails += 1;
     }
 
-    if(serieFinished()) {resetArray();}
-
+    if(serieFinished()) {resetDisplay();}
 });

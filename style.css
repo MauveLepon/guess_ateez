@@ -13,8 +13,17 @@ html, body {
       text-align: center;
   }
 
+  h5 {
+      text-align: center;
+  }
+
+  h4 {
+      display: none;
+      text-align: center;
+  }
+
   #input-text {
-    display: block;
+    display: none;
     border: none;
     border-radius: 20px;
     padding: 5px 8px;
