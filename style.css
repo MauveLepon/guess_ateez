@@ -1,0 +1,69 @@
+html, body {
+    width: 100%;
+    height:100%;
+  }
+  
+  body {
+      background: linear-gradient(-45deg, #ee7752, #e73c7e, #1f87ac, #45e7c1);
+      background-size: 400% 400%;
+      animation: gradient 17s ease infinite;
+  }
+
+  h2 {
+      text-align: center;
+  }
+
+  #input-text {
+    display: block;
+    border: none;
+    border-radius: 20px;
+    padding: 5px 8px;
+    color: #333;
+    box-shadow: inset 0 2px 0 rgba(0, 0, 0, .2), 0 0 4px rgba(0, 0, 0, 0.1);
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  #grp-members {
+      display: block;
+      border: 1mm ridge #b0b7ca;
+      margin-left: auto;
+      margin-right: auto;
+  }
+
+  .shk {
+    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+  
+  @keyframes shake {
+    10%, 90% {
+      transform: translate3d(-1px, 0, 0);
+    }
+    
+    20%, 80% {
+      transform: translate3d(2px, 0, 0);
+    }
+  
+    30%, 50%, 70% {
+      transform: translate3d(-4px, 0, 0);
+    }
+  
+    40%, 60% {
+      transform: translate3d(4px, 0, 0);
+    }
+  }
+  
+  @keyframes gradient {
+      0% {
+          background-position: 0% 50%;
+      }
+      50% {
+          background-position: 100% 50%;
+      }
+      100% {
+          background-position: 0% 50%;
+      }
+  }
