@@ -79,7 +79,7 @@ group_members.addEventListener('click', function() {
         document.querySelector('h4').style.display = 'none';
         user_input.style.display = 'block';
     }
-})
+});
 
 user_input.addEventListener('keypress', function(e) {
     if(e.key == 'Enter' && user_input.value.toLowerCase() === correct_answer) {
