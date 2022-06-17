@@ -87,10 +87,14 @@ user_input.addEventListener('keypress', function(e) {
         user_input.value = '';
         serie += 1;
     } else if(e.key == 'Enter' && user_input.value.trim().toLowerCase() !== correct_answer) {
-        group_members.className += "shk";
+        group_members.classList.add("shk");
         user_input.value = '';
         nb_of_fails += 1;
     }
+
+    group_members.addEventListener("animationend", (e) => {
+        group_members.classList.remove("shk");
+    });
 
     if(serieFinished()) {resetDisplay();}
 });
