@@ -34,7 +34,7 @@ function pickPhoto() {
 }
 
 function serieFinished() {
-    return serie === 3;
+    return serie === 10;
 }
 
 function resetDisplay() {
@@ -60,7 +60,7 @@ function resetDisplay() {
     } else if(nb_of_fails <= 5) {
         document.querySelector('h4').textContent = "You only made " + nb_of_fails + " mistakes, that's pretty good !";
     } else {
-        document.querySelector('h4').textContent = "You made more than 5 mistakes, but it's okay, keep trying !";
+        document.querySelector('h4').textContent = "You made more than 5 mistakes, but it's okay, keep trying ! (" + nb_of_fails + ")";
     }
 
     document.querySelector('h4').style.display = 'block';
