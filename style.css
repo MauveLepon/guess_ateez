@@ -4,7 +4,7 @@ html, body {
   }
   
   body {
-      background: linear-gradient(-45deg, #ee7752, #e73c7e, #1f87ac, #45e7c1);
+      background: linear-gradient(-45deg, #02aab0, #bbb1db, #cf7ab6, #d68e8a);
       background-size: 400% 400%;
       animation: gradient 17s ease infinite;
   }
@@ -20,6 +20,12 @@ html, body {
   h4 {
       display: none;
       text-align: center;
+  }
+
+  .readme {
+    text-align: center;
+    text-justify: auto;
+    font-family: "Gill Sans", sans-serif;
   }
 
   #input-text {
